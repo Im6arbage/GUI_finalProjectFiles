@@ -29,7 +29,16 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	Image image;
 	
 	
-    
+	/************************************************
+	 * Class: FinanceWindow
+	 * Method: FinanceWindow()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * This is the default constructor which
+	 * initializes the window along with menu items
+	 * and their event handlers
+	 ************************************************/
 
 	public FinanceWindow() 
 	{
@@ -79,26 +88,54 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		super.setResizable(false);
 		
 	}
+	/************************************************
+	 * Class: FinanceWindow
+	 * Method: paint(Graphics g)
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * This method should display the HerrBrum
+	 * picture.
+	 ************************************************/
 	public void paint(Graphics g)
 	{
 		super.paint(g);
 		g.drawImage(image, 20, 150, null);
 	}
-
+	/************************************************
+	 * Class: FinanceWindow
+	 * Method: addClientInfoTab()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 * 
+	 ************************************************/
 	public void addClientInfoTab(Client cl)
 	{
 		JPanel panel = new JPanel();
 		m_tabbedPane.addTab(cl.getName(), panel);
 	}
 	
-	
+	/************************************************
+	 * Class: FinanceWindow
+	 * Method: addNewClientTab()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 * 
+	 ************************************************/
 	private void addNewClientTab()
 	{
 		NewClientPanel newpanel = new NewClientPanel(new Client());
 		m_tabbedPane.addTab("New Client", newpanel);	
 	}
-	
-	
+	/************************************************
+	 * Class: FinanceWindow
+	 * Method: actionPerformed(ActionEvent arg)
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * This is the method that handles events for
+	 * menu items exit, new client, 
+	 ************************************************/
 	public void actionPerformed(ActionEvent arg) {
 		Object ev = arg.getSource();
 		if(ev == m_exit)

@@ -23,42 +23,56 @@ import javax.swing.border.EtchedBorder;
 
 public class NewClientPanel extends JPanel implements ActionListener{
 	
-	private JLabel clientname; //ADDED ****
-	private JLabel whatpercent; //ADDED ****
-	private JLabel testblank; //ADDED ****
-	private JLabel grossincome; //ADDED ****
-	private JTextField gross; //ADDED ****
-	private JLabel expenses; //ADDED ****
-	private JLabel inputstyle; //ADDED ****
+	// Submit client information labels
+	private JLabel clientname;
+	private JTextField name;
+	private JLabel whatpercent; 
+	private JLabel grossincome; 
+	private JTextField gross; 
+	private JLabel expenses; 
     
-	private JTextField gasex; //ADDED ****
-	private JTextField foodex; //ADDED ****
-	private JTextField billsex; //ADDED ****
-	private JTextField entex; //ADDED ****
+	// Example fields (ex: 200.00);
+	private JTextField gasex; 
+	private JTextField foodex; 
+	private JTextField billsex; 
+	private JTextField entex; 
 	
-	private JLabel gas; //ADDED ****
-	private JLabel food; //ADDED ****
-	private JLabel bills; //ADDED ****
-	private JLabel entertainment; //ADDED ****
+	// Expense Labels
+	private JLabel gas; 
+	private JLabel food; 
+	private JLabel bills;
+	private JLabel entertainment; 
 	
-	private JRadioButton tenpercent; //ADDED ****
-	private JRadioButton fifteenpercent; //ADDED ****
-	private JRadioButton twentypercent; //ADDED ****
+	// Desired percentage to save
+	private JRadioButton tenpercent; 
+	private JRadioButton fifteenpercent; 
+	private JRadioButton twentypercent; 
 	private Client m_clientinfo;
 	
-	ButtonGroup group; //ADDED ****
+	ButtonGroup group; 
 	
-	private JButton submit; //ADDED ****
+	private JButton submit; 
 	
-	ImageIcon icon; //ADDED ****
-	JLabel iconlabel; //ADDED ****
+	// money icon symbol in new client tab
+	ImageIcon icon; 
+	JLabel iconlabel; 
 
-    
-	static String ten = "10%";	//ADDED ****
-	static String fifteen = "15%";	//ADDED ****
-	static String twenty = "20%"; 	//ADDED ****
-	private JTextField name;
+	// strings for radio buttons
+	static String ten = "10%";	
+	static String fifteen = "15%";	
+	static String twenty = "20%"; 	
 	
+	/************************************************
+	 * Class: NewClientPanel
+	 * Method: NewClientPanel()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * This is the default constructor. It initializes
+	 * the graphics, text fields, labels, radio
+	 * buttons and all fields other attributes
+	 * inside the new client tab.
+	 ************************************************/	
 	public NewClientPanel(Client cl)
 	{
 		super();
@@ -193,12 +207,27 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		Dimension dim = toolkit.getScreenSize();
 		
 	}
-
+	/************************************************
+	 * Class: NewClientPanel
+	 * Method: paintComponent()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * 
+	 ************************************************/
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 	}
-	
+	/************************************************
+	 * Class: NewClientPanel
+	 * Method: actionPerformed()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * This method handles events for submit and
+	 * checks for correctly inputted information
+	 ************************************************/	
 	public void actionPerformed(ActionEvent arg) 
 	{
 		Object ev = arg.getSource();
