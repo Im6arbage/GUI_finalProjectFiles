@@ -6,6 +6,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
+import java.awt.Graphics;
+
 
 
 
@@ -23,8 +25,12 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	JMenuItem m_loadClientList;
 	JMenuItem m_exit;
 	JMenuItem m_about;
-    
 	
+	Image image;
+	
+	
+    
+
 	public FinanceWindow() 
 	{
 		super("HerrBrum Finance Calculator");
@@ -57,19 +63,28 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		
 		super.setJMenuBar(m_menubar);
 	
+		image = Toolkit.getDefaultToolkit().createImage("/Users/codyherring/Desktop/Final_Project_Source_2/Startup_Image.jpg");
+		
+
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension dim = toolkit.getScreenSize();
-    
-
+		
+		
+		
 		super.setBounds(200,200,dim.width-600,dim.height-100);
 		super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		super.add(m_tabbedPane);
 		super.setVisible(true);
+		super.setResizable(false);
 		
 	}
-	
-	
+	public void paint(Graphics g)
+	{
+		super.paint(g);
+		g.drawImage(image, 20, 150, null);
+	}
+
 	public void addClientInfoTab(Client cl)
 	{
 		JPanel panel = new JPanel();
