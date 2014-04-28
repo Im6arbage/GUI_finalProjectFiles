@@ -7,6 +7,7 @@ public class Expense{
 	{
 		m_value = 0.0f;
 		m_priority = 0;
+		m_description = "";
 	}
 	
 	
@@ -29,6 +30,11 @@ public class Expense{
 	public int getPriority()
 	{
 		return m_priority;
+	}
+	
+	public void setExpense(String des, float val, int pr)
+	{
+		
 	}
 	
 	

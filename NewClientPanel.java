@@ -121,7 +121,7 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		group.add(twentypercent);
 		p1ba.add(twentypercent);
 		
-		icon = new ImageIcon("/Users/codyherring/Desktop/GUI_finalProject/GUI_finalProjectFiles/money_icon.png");
+		icon = new ImageIcon("C:/Users/No/Documents/GitHub/GUI_finalProject/GUI_finalProjectFiles/money_icon.png");
 		
 		iconlabel = new JLabel(icon);
 	 
@@ -234,21 +234,48 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		
 		if(ev == submit)
 		{
-			float income = 0.0f;
+			float income, billsamt, gasamt, foodamt,entamt ;
 			try
 			{
 				income = Float.parseFloat(gross.getText());
+				billsamt = Float.parseFloat(billsex.getText());
+				gasamt = Float.parseFloat(gasex.getText());
+				foodamt = Float.parseFloat(foodex.getText());
+				entamt = Float.parseFloat(entex.getText());
+				
+				m_clientinfo.setName(name.getText());
+				m_clientinfo.setIncome(income);
+				
+				Expense[] expenses = new Expense[4];
+				expenses[0] = new Expense("Bills", billsamt, 0);
+				expenses[1] = new Expense("Gas", gasamt, 1);
+				expenses[2] = new Expense("Food", foodamt, 2);
+				expenses[3] = new Expense("Entertainment", entamt, 3);
+					
+				m_clientinfo.setExpenses(expenses);
+					
+				float percentage = 0.0f;
+				if(tenpercent.isSelected())
+				{
+					percentage = 0.10f;
+				}
+				else if(fifteenpercent.isSelected())
+				{
+					percentage = 0.15f;
+				}
+				else if(twentypercent.isSelected())
+				{
+					percentage = 0.20f;
+				}
+				m_clientinfo.setSavings(percentage);
+				
+				((FinanceWindow) this.getTopLevelAncestor()).addClientInfoTab(m_clientinfo);
+				((FinanceWindow) this.getTopLevelAncestor()).removePreviousTab();
 			}
-			catch(Exception e)
+			catch(NumberFormatException e)
 			{
 				JOptionPane.showMessageDialog(null, "Please enter valid values!");
 			}
-			
-			m_clientinfo.setName(name.getText());
-			
-			//Expense[] ex = null;
-			//ex[0] = new Expense("Bills", );
-			//m_clientinfo.setExpenses(ex);
 		}
 	}
 }
