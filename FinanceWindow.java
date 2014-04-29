@@ -75,6 +75,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
     
 
 		super.setBounds(200,200,dim.width-600,dim.height-100);
+		super.setSize(650, 700);
 		super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		super.add(m_tabbedPane);
 		super.setVisible(true);
@@ -105,7 +106,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	 ************************************************/
 	public void addClientInfoTab(Client cl)
 	{
-		JPanel panel = new JPanel();
+		ClientPanel panel = new ClientPanel(cl);
 		m_tabbedPane.addTab(cl.getName(), panel);
 		m_currTab++;
 	}
@@ -135,7 +136,9 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	private void addNewClientTab()
 	{
 		NewClientPanel newpanel = new NewClientPanel(new Client());
-		m_tabbedPane.addTab("New Client", newpanel);	
+		m_tabbedPane.addTab("New Client", newpanel);
+		
+		
 	}
 	
 	/************************************************
