@@ -5,7 +5,8 @@ import javax.swing.*;
 import java.util.*;
 import javax.swing.JPanel;
 
-public class ClientPanel extends JPanel{
+
+public class ClientPanel extends JPanel implements ActionListener{
 	
 	
 	private JLabel subclientname;
@@ -31,7 +32,14 @@ public class ClientPanel extends JPanel{
 	private JTextField enttext;
 	private JTextField foodtext;
 	
+	private JButton changestotalincome;
+	private JButton changesfood;
+	private JButton changesgas;
+	private JButton changesbills;
+	private JButton changesent;
 	
+	
+	private JPanel incomepanel;
 
 	public ClientPanel()
 	{
@@ -46,6 +54,26 @@ public class ClientPanel extends JPanel{
 		
 		Expense [] exp;
 		exp = cl.getExpenses();
+		
+		incomepanel = new JPanel();
+		incomepanel.setLayout(new GridLayout(2,5));
+		incomepanel.setBackground(Color.GRAY);
+		
+		
+		
+		changestotalincome = new JButton("Edit");
+		changestotalincome.addActionListener(this);
+		changestotalincome.setAlignmentX(LEFT_ALIGNMENT);
+		changesfood = new JButton ("Edit");
+		changesfood.addActionListener(this);
+		changesgas = new JButton("Edit");
+		changesgas.addActionListener(this);
+		changesbills = new JButton("Edit");
+		changesbills.addActionListener(this);
+		changesent = new JButton("Edit");
+		changesent.addActionListener(this);
+	
+		incomepanel.add(changestotalincome);
 		
 		subclientname = new JLabel("Client Name: " + cl.getName());
 		subclientname.setForeground(Color.WHITE);
@@ -79,21 +107,31 @@ public class ClientPanel extends JPanel{
 		subgoal.setForeground(Color.WHITE);
 		
 		subactualsav = new JLabel("You actually saved " + (100 - cl.getActualSavingsPercentage()) + "% of your total income");
-
+		subactualsav.setForeground(Color.WHITE);
+		
 		subclientpanel = new JPanel();
 		subclientpanel.setLayout(new GridLayout(0,1));
 		
 		subclientpanel.add(subclientname);
 		subclientpanel.add(subtotalincome);
+		subclientpanel.add(incomepanel);
 		subclientpanel.add(subgrossincome);
 		subclientpanel.add(subbills);
+		subclientpanel.add(changesbills);
 		subclientpanel.add(subfood);
+		subclientpanel.add(changesfood);
 		subclientpanel.add(subgas);
+		subclientpanel.add(changesgas);
 		subclientpanel.add(subent);
+		subclientpanel.add(changesent);
 		subclientpanel.add(subgoal);
 		subclientpanel.add(subactualsav);
 		
 		subclientpanel.setBackground(Color.GRAY);
 		add(subclientpanel);	
+	}
+	public void actionPerformed(ActionEvent ev)
+	{
+		
 	}
 }

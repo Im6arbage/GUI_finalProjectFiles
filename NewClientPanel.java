@@ -121,7 +121,7 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		group.add(twentypercent);
 		p1ba.add(twentypercent);
 		
-		icon = new ImageIcon("C:/Users/No/Documents/GitHub/GUI_finalProject/GUI_finalProjectFiles/money_icon.png");
+		icon = new ImageIcon("/Users/codyherring/Desktop/GUI_finalProject/GUI_finalProjectFiles/money_icon.png");
 		
 		iconlabel = new JLabel(icon);
 	 
