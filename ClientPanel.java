@@ -49,9 +49,7 @@ public class ClientPanel extends JPanel{
 		
 		gross
 		subgrossincome = new JLabel("Gross Income: ");
-		subgrossincome.setForeground(Color.WHITE);
-		//gross = c.getGrossIncome();
-		
+		subgrossincome.setForeground(Color.WHITE);		
 		
 		foodtext = new JTextField(10);
 		foodtext.setText("0000");
