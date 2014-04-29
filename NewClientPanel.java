@@ -166,16 +166,19 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		billsex.setText("ex: 200.00");
 		billsex.selectAll();
 		p2bb.add(billsex);
-		p2bb.add(gas = new JLabel("Gas: "));
-		gasex = new JTextField(6);
-		gasex.setText("ex: 200.00");
-		gasex.selectAll();
-		p2bb.add(gasex);
+		
 		p2bb.add(food = new JLabel("Food: "));
 		foodex = new JTextField(6);
 		foodex.setText("ex: 200.00");
 		foodex.selectAll();
 		p2bb.add(foodex);
+		
+		p2bb.add(gas = new JLabel("Gas: "));
+		gasex = new JTextField(6);
+		gasex.setText("ex: 200.00");
+		gasex.selectAll();
+		p2bb.add(gasex);
+
 		p2bb.add(entertainment = new JLabel("Entertainment: "));
 		entex = new JTextField(6);
 		entex.setText("ex: 200.00");
