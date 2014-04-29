@@ -23,7 +23,6 @@ public class ClientPanel extends JPanel{
 	
 	private JPanel subclientpanel;
 
-	private JLabel
 	public ClientPanel()
 	{
 		super();

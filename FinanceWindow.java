@@ -19,8 +19,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	JMenu m_fileMenu;
 	JMenu m_helpMenu;
 	JMenuItem m_newClient;
-	JMenuItem m_saveClientList;
-	JMenuItem m_loadClientList;
+	JMenuItem m_export;
 	JMenuItem m_exit;
 	JMenuItem m_about;
 	
@@ -47,8 +46,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		
 		m_newClient = new JMenuItem("New Client");
 		m_newClient.addActionListener(this);
-		m_saveClientList = new JMenuItem("Save");
-		m_loadClientList = new JMenuItem("Load");
+		m_export = new JMenuItem("Export");
 		m_exit = new JMenuItem("Exit");
 		m_exit.addActionListener(this);
 		
@@ -57,8 +55,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		
 		m_fileMenu = new JMenu("File");
 		m_fileMenu.add(m_newClient);
-		m_fileMenu.add(m_saveClientList);
-		m_fileMenu.add(m_loadClientList);
+		m_fileMenu.add(m_export);
 		m_fileMenu.add(m_exit);
 		
 		m_helpMenu = new JMenu("Help");
@@ -159,6 +156,10 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		else if(ev == m_newClient)
 		{
 			addNewClientTab();
+		}
+		else if (ev == m_export)
+		{
+			m_clientmanager.saveClient(m_tabbedPane.getSelectedIndex());   
 		}
 	}
 }

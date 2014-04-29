@@ -31,6 +31,17 @@ public class Client{
 	
 	
 	//public float getTargetPercentage
+	public float getPercentageOf(String ex)
+	{
+		for(int i = 0; i < 4; ++i)
+		{
+			if(ex == m_expenses[i].getDescription())
+			{
+				return (m_expenses[i].getValue()/m_monthlyIncome) * 100;
+			}
+		}
+		return 0.0f;
+	}
 	
 	
 	public float getActualSavingsPercentage()
@@ -88,6 +99,12 @@ public class Client{
 	}
 	
 	
+	public float getTargetSavings()
+	{
+		return m_targetSavings;
+	}
+	
+	
 	public Expense[] getExpenses()
 	{
 		return m_expenses;
@@ -111,34 +128,6 @@ public class Client{
 		return m_name;
 	}
 	
-	
-	public String suggest()
-	{
-		float gross = 0;
-		for(int i = 0; i < 4; ++i)
-		{
-			gross += m_expenses[i].getValue();
-		}
-		gross = m_monthlyIncome - gross;
-		if(gross < m_targetSavings)
-		{
-			if(getLowestPriority().getDescription() != "invalid")
-			{
-				return "You have not met your desired savings goal! Perhaps you should cut back " + 
-						"more on\n" + getLowestPriority().getDescription() + "!";
-			}
-			else
-			{
-				return "You need a new job!";
-			}
-		}
-		else
-		{
-			float rate = ((100 * gross) / m_monthlyIncome);
-			return "Congratulations!\n You have met your intended goal with " + String.valueOf(rate) +
-					"% savings! Great job!";
-		}
-	}
 	
 	
 	public void save() throws FileNotFoundException
