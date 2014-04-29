@@ -12,26 +12,24 @@ public class ClientPanel extends JPanel{
 	private JLabel subclient;
 	
 	private JLabel subtotalincome;
+
 	private JLabel subgrossincome;
 	private JLabel subgross;
-	
-	
-	
+	private JLabel subexpenses;
+	private JLabel subexp;
 	private JLabel subfood;
-	private JLabel foodpercent;
-	private JTextField foodtext;
-	
 	private JLabel subent;
-	private JTextField enttext;
 	private JLabel subgas;
-	private JTextField gastext;
 	private JLabel subbills;
-	private JTextField billstext;
 	private JLabel subgoal;
-	private JTextField goaltext;
 	private JLabel subactualsav;
 	
 	private JPanel subclientpanel;
+	
+	private JTextField billstext;
+	private JTextField gastext;
+	private JTextField enttext;
+	private JTextField foodtext;
 	
 	
 
@@ -45,7 +43,6 @@ public class ClientPanel extends JPanel{
 	{
 		super();
 		super.setLayout(new GridLayout(1, 2));
-		//super.add();
 		
 		Expense [] exp;
 		exp = cl.getExpenses();
@@ -82,8 +79,7 @@ public class ClientPanel extends JPanel{
 		subgoal.setForeground(Color.WHITE);
 		
 		subactualsav = new JLabel("You actually saved " + (100 - cl.getActualSavingsPercentage()) + "% of your total income");
-		subactualsav.setForeground(Color.WHITE);
-		
+
 		subclientpanel = new JPanel();
 		subclientpanel.setLayout(new GridLayout(0,1));
 		

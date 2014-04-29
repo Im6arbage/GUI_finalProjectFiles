@@ -7,9 +7,9 @@ public class ClientManager{
 	
 	public ClientManager()
 	{
-		
-	}
 	
+	}
+
 	
 	public ClientManager(String name, float budget, float savings)
 	{
@@ -20,6 +20,7 @@ public class ClientManager{
 	public ClientManager(Client cl)
 	{
 		addClient(cl);
+	
 	}
 	
 	
