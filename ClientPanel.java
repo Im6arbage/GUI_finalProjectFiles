@@ -10,20 +10,28 @@ public class ClientPanel extends JPanel{
 	
 	private JLabel subclientname;
 	private JLabel subclient;
+	
 	private JLabel subgrossincome;
 	private JLabel subgross;
-	private JLabel subexpenses;
-	private JLabel subexp;
+	
+	
+	
 	private JLabel subfood;
+	private JLabel foodpercent;
+	private JTextField foodtext;
+	
 	private JLabel subent;
+	private JTextField enttext;
 	private JLabel subgas;
+	private JTextField gastext;
 	private JLabel subbills;
+	private JTextField billstext;
 	private JLabel subgoal;
+	private JTextField goaltext;
 	private JLabel subactualsav;
 	
 	private JPanel subclientpanel;
 
-	private JLabel
 	public ClientPanel()
 	{
 		super();
@@ -39,24 +47,40 @@ public class ClientPanel extends JPanel{
 		subclientname = new JLabel("Client Name: ");
 		subclientname.setForeground(Color.WHITE);
 		
-		
+		gross
 		subgrossincome = new JLabel("Gross Income: ");
 		subgrossincome.setForeground(Color.WHITE);
 		//gross = c.getGrossIncome();
 		
 		
-		
-		subfood = new JLabel("Your Food Expense: ");
+		foodtext = new JTextField(10);
+		foodtext.setText("0000");
+		foodtext.setEditable(false);
+		subfood = new JLabel("Your food Expense is " + foodtext.getText() + " of your gross income or " + cl.getPercentageOf("Food"));
 		subfood.setForeground(Color.WHITE);
-		subent = new JLabel("Entertainment Expense(%): ");
+		
+		enttext = new JTextField(10);
+		enttext.setText("0000");
+		entpercent = new Jlabel("10%");
+		foodtext.setEditable(false);
+		subent = new JLabel("Your entertainment Expense is " + enttext.getText() + " of your gross income or " + cl.getPercentageOf("Entertainment"));
 		subent.setForeground(Color.WHITE);
-		subgas = new JLabel("Gas Expense(%): ");
+		
+		gastext = new JTextField(10);
+		gastext.setText("0000");
+		subgas = new JLabel("Your gas Expense is " + gastext.getText() + " of your gross income or " + cl.getPercentageOf("Gas"));
 		subgas.setForeground(Color.WHITE);
-		subbills = new JLabel("Bills Expense(%): ");
+		
+		billstext = new JTextField(10);
+		billstext.setText("0000");
+		subbills = new JLabel("Your bills expense is " + billstext.getText() + " of your gross income or " + cl.getPercentageOf("Bills"));
 		subbills.setForeground(Color.WHITE);
-		subgoal = new JLabel("Your target goal savings was (blank) percent of your total income"); //+ c.getTargetPercentage());
+		
+		subgoal = new JLabel("Your target goal savings was " + cl.getTargetSavings() + " percent of your total income");
 		subgoal.setForeground(Color.WHITE);
-		subactualsav = new JLabel("You actually saved (%):"); // + c.getActualSavingsPercentage() + " percent of your gross income");
+		
+		
+		subactualsav = new JLabel("You actually saved " + cl.getActualSavingsPercentage() + " percent of your total income");
 		subactualsav.setForeground(Color.WHITE);
 		
 		subclientpanel = new JPanel();
