@@ -16,8 +16,8 @@ public class Client{
 		m_monthlyIncome = 0.0f;
 		m_targetSavings = 0.0f;
 		m_expenses[0] = new Expense("Bills", 0.0f, 0);
-		m_expenses[1] = new Expense("Gas", 0.0f, 2);
-		m_expenses[2] = new Expense("Food", 0.0f, 1);
+		m_expenses[1] = new Expense("Food", 0.0f, 2);
+		m_expenses[2] = new Expense("Gas", 0.0f, 1);
 		m_expenses[3] = new Expense("Entertainment", 0.0f, 3);
 	}
 	
@@ -51,7 +51,8 @@ public class Client{
 		{
 			percent += m_expenses[i].getValue();
 		}
-		return (percent / m_monthlyIncome) * 100.0f;
+		float returnval = (percent / m_monthlyIncome) * 100.0f;
+		return (returnval > 100.0f) ? returnval - 100.0f : returnval;
 	}
 	
 	private Expense getLowestPriority()

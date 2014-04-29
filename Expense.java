@@ -32,10 +32,6 @@ public class Expense{
 		return m_priority;
 	}
 	
-	public void setExpense(String des, float val, int pr)
-	{
-		
-	}
 	
 	
 	public float getValue()
