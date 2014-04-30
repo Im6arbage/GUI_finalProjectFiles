@@ -87,6 +87,16 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		mainpanel1.setLayout(new FlowLayout());
 		mainpanel1.setBackground(Color.ORANGE);
 		
+		//JPanel title = new JPanel();
+		//JLabel titlefield = new JLabel();
+		//title.setLayout(new FlowLayout());
+		//title.setBackground(Color.ORANGE);
+		//titlefield.setFont(new Font("Helvetica", Font.BOLD, 24));
+		//titlefield.setText("HerrBrum Financial Calculator");
+		//
+		//title.add(titlefield);
+		
+		
 		JPanel p1 = new JPanel();
 		p1.setLayout(new GridLayout(3,0));
 		p1.setBorder(raisedetched);
@@ -220,11 +230,12 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		
 		mainpanel2.add(p2);
 		
-		/*panel.*/setLayout(new GridLayout(2,1));
+		setLayout(new GridLayout(2,1));
 		mainpanel1.add(mainpanel1a);
 		
-		/*panel.*/add(mainpanel1, BorderLayout.NORTH);
-		/*panel.*/add(mainpanel2, BorderLayout.SOUTH);
+		//add(title);
+		add(mainpanel1, BorderLayout.NORTH);
+		add(mainpanel2, BorderLayout.SOUTH);
 		
 		
 		setBackground(Color.ORANGE);
