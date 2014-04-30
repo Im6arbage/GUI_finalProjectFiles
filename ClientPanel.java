@@ -139,17 +139,9 @@ public class ClientPanel extends JPanel implements ActionListener{
 		nameformat.setBackground(Color.ORANGE);
 		subclientname.setFont(new Font("Cambria", Font.ITALIC | Font.BOLD, 20));
 		nameformat.add(subclientname);
-<<<<<<< HEAD
-
 		
 		summarypane.setLayout(new GridLayout(2, 2));
 		summarypane.setBackground(Color.ORANGE);
-
-=======
-		
-		summarypane.setLayout(new GridLayout(2, 2));
-		summarypane.setBackground(Color.ORANGE);
->>>>>>> FETCH_HEAD
 		summarypane.add(subgrossincome);
 		summarypane.add(subgoal);
 		summarypane.add(subactualsav);
