@@ -66,9 +66,9 @@ public class NewClientPanel extends JPanel implements ActionListener{
 	
 	/************************************************
 	 * Class: NewClientPanel
-	 * Method: NewClientPanel()
+	 * Method: NewClientPanel(client cl)
 	 *
-	 * Author: Cody Herring/Justin Brumley
+	 * Author: Cody Herring
 	 *
 	 * This is the default constructor. It initializes
 	 * the graphics, text fields, labels, radio
@@ -175,7 +175,7 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		p2b.setBackground(Color.ORANGE);
 		
 		
-		p2a.add(grossincome = new JLabel("Gross Income (Monthly): "));
+		p2a.add(grossincome = new JLabel("Total Income (Monthly): "));
 		gross = new JTextField(10);
 		gross.setText("ex: 10000.00");
 		gross.selectAll();
@@ -246,24 +246,12 @@ public class NewClientPanel extends JPanel implements ActionListener{
 	}
 	/************************************************
 	 * Class: NewClientPanel
-	 * Method: paintComponent()
-	 *
-	 * Author: Cody Herring/Justin Brumley
-	 *
-	 * 
-	 ************************************************/
-	public void paintComponent(Graphics g)
-	{
-		super.paintComponent(g);
-	}
-	/************************************************
-	 * Class: NewClientPanel
-	 * Method: actionPerformed()
+	 * Method: actionPerformed(ActionEvent arg)
 	 *
 	 * Author: Cody Herring/Justin Brumley
 	 *
 	 * This method handles events for submit and
-	 * checks for correctly inputted information
+	 * checks for correctly inputted information.
 	 ************************************************/	
 	public void actionPerformed(ActionEvent arg) 
 	{

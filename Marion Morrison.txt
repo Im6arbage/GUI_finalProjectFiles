@@ -1,0 +1,7 @@
+Customer Name: Marion Morrison
+Monthly Income: 100.0
+Target Savings: 0.1
+Bills : 0.0
+Gas : 0.0
+Food : 0.0
+Entertainment : 0.0

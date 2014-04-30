@@ -85,23 +85,25 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	 * Class: FinanceWindow
 	 * Method: paint(Graphics g)
 	 *
-	 * Author: Cody Herring/Justin Brumley
+	 * Author: Cody Herring
 	 *
 	 * This method should display the HerrBrum
 	 * picture.
 	 ************************************************/
-	public void paint(Graphics g)
-	{
-		super.paint(g);
-		g.drawImage(image, 20, 150, null);
-	}
+	//public void paint(Graphics g)
+	//{
+	//	super.paint(g);
+	//	g.drawImage(image, 20, 150, null);
+	//}
 	
 	/************************************************
 	 * Class: FinanceWindow
 	 * Method: addClientInfoTab()
 	 *
-	 * Author: Cody Herring/Justin Brumley
-	 * 
+	 * Author: Justin Brumley
+	 *
+	 * This method adds the summary of the client
+	 * information.
 	 ************************************************/
 	public void addClientInfoTab(Client cl)
 	{
@@ -131,7 +133,8 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	 * Method: addNewClientTab()
 	 *
 	 * Author: Cody Herring/Justin Brumley
-	 * 
+	 *
+	 * This method adds a new client tab for submission
 	 ************************************************/
 	private void addNewClientTab()
 	{
@@ -146,7 +149,8 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	 * Author: Cody Herring/Justin Brumley
 	 *
 	 * This is the method that handles events for
-	 * menu items exit, new client, 
+	 * menu items exit, new client, save, and
+	 * the about prompt.
 	 ************************************************/
 	public void actionPerformed(ActionEvent arg) {
 		Object ev = arg.getSource();

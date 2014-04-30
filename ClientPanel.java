@@ -49,13 +49,28 @@ public class ClientPanel extends JPanel implements ActionListener{
 	public static final int ENTERTAINMENT = 3;
 	
 	private JPanel incomepanel;
-
+	
+	/************************************************
+	 * Class: ClientPanel
+	 * Method: ClientPanel()
+	 *
+	 * Author: Cody Herring/Justin Brumley
+	 *
+	 * This is a default constructor.
+	 ************************************************/
 	public ClientPanel()
 	{
 		super();
 	}
-	
-	
+	/************************************************
+	 * Class: ClientPanel
+	 * Method: ClientPanel(Client cl)
+	 *
+	 * Author: Cody Herring
+	 *
+	 * This is the default constructor which
+	 * initializes the summary page of the Client.
+	 ************************************************/
 	public ClientPanel(Client cl)
 	{
 		super();
@@ -136,7 +151,7 @@ public class ClientPanel extends JPanel implements ActionListener{
 		
 		nameformat.setLayout(new FlowLayout());
 		nameformat.setBackground(Color.ORANGE);
-		subclientname.setFont(new Font("Cambria", Font.ITALIC | Font.BOLD, 20));
+		subclientname.setFont(new Font("Cambria", Font.ITALIC | Font.BOLD, 36));
 		nameformat.add(subclientname);
 		
 		summarypane.setLayout(new GridLayout(2, 2));
@@ -162,9 +177,15 @@ public class ClientPanel extends JPanel implements ActionListener{
 		subclientpanel.setBackground(Color.ORANGE);
 		add(subclientpanel);	
 	}
-	
-	
-	
+	/************************************************
+	 * Class: ClientPanel
+	 * Method: actionPerformed(ActionEvent ev)
+	 *
+	 * Author: Justin Brumley
+	 *
+	 * This method handles the user requested changes
+	 * for income and expenses.
+	 ************************************************/
 	public void actionPerformed(ActionEvent ev)
 	{
 		Object o = ev.getSource();
@@ -208,9 +229,16 @@ public class ClientPanel extends JPanel implements ActionListener{
 		
 		subactualsav.setText("You actually saved " + dec.format((100 - m_client.getActualSavingsPercentage())) + "% of your total income.");
 	}
-	
-	
-	
+	/************************************************
+	 * Class: ClientPanel
+	 * Method: modifyPrompt(int exp)
+	 *
+	 * Author: Justin Brumley
+	 *
+	 * This method handles the pop up window
+	 * for manually modifying input values for
+	 * income and expenses.
+	 ************************************************/
 	public void modifyPrompt(int exp)
 	{
 		String result = (String)JOptionPane.showInputDialog(null,"Enter the modified value: ",
@@ -265,8 +293,15 @@ public class ClientPanel extends JPanel implements ActionListener{
 		this.getTopLevelAncestor().repaint();
 	}
 	
-	
-	
+	/************************************************
+	 * Class: ClientPanel
+	 * Method: getAssociatedClient()
+	 *
+	 * Author: Justin Brumley
+	 *
+	 * This method returns the reference
+	 * to a client.
+	 ************************************************/
 	public Client getAssociatedClient()
 	{
 		return m_client;
