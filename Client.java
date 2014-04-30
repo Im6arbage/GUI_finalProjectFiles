@@ -91,6 +91,12 @@ public class Client{
 	}
 	
 	
+	public void setExpense(int index, float val)
+	{
+		m_expenses[index].modifyExpense(val);
+	}
+	
+	
 	public void setExpenses(Expense[] ex)
 	{
 		for(int i = 0; i < 4; ++i)
