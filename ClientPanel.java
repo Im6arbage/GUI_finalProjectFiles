@@ -73,10 +73,10 @@ public class ClientPanel extends JPanel implements ActionListener{
 		
 		changestotalincome = new JButton("Edit");
 		changestotalincome.addActionListener(this);
-		changestotalincome.setBackground(Color.DARK_GRAY);
-		changestotalincome.setForeground(Color.WHITE);
+		changestotalincome.setBackground(Color.GRAY);
+		changestotalincome.setForeground(Color.BLACK);
 		
-		totalIncomeButtonPanel.setBackground(Color.GRAY);
+		totalIncomeButtonPanel.setBackground(Color.ORANGE);
 		totalIncomeButtonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		totalIncomeButtonPanel.add(changestotalincome);
 		
@@ -84,10 +84,10 @@ public class ClientPanel extends JPanel implements ActionListener{
 		{
 			buttonPanel[i] = new JPanel();
 			buttonPanel[i].setLayout(new FlowLayout(FlowLayout.LEFT));
-			buttonPanel[i].setBackground(Color.GRAY);
+			buttonPanel[i].setBackground(Color.ORANGE);
 			modifyExpenses[i] = new JButton("Edit");
-			modifyExpenses[i].setBackground(Color.DARK_GRAY);
-			modifyExpenses[i].setForeground(Color.WHITE);
+			modifyExpenses[i].setBackground(Color.GRAY);
+			modifyExpenses[i].setForeground(Color.BLACK);
 			modifyExpenses[i].addActionListener(this);
 			buttonPanel[i].add(modifyExpenses[i]);
 		}
@@ -96,38 +96,38 @@ public class ClientPanel extends JPanel implements ActionListener{
 		exp = cl.getExpenses();
 		
 		subclientname = new JLabel(m_client.getName());
-		subclientname.setForeground(Color.WHITE);
+		subclientname.setForeground(Color.BLACK);
 		
 		subtotalincome = new JLabel("Total Income: $" + dec.format(m_client.getMonthlyIncome()));
-		subtotalincome.setForeground(Color.WHITE);
+		subtotalincome.setForeground(Color.BLACK);
 		subgrossincome = new JLabel("Gross Income: $" + dec.format(m_client.getGrossIncome()));
-		subgrossincome.setForeground(Color.WHITE);		
+		subgrossincome.setForeground(Color.BLACK);		
 		
 		billstext = new JTextField(10);
 		billstext.setText(" ");
 		subbills = new JLabel("Your bills expense is $" + dec.format(exp[0].getValue()) + " of your gross income. (" + dec.format(m_client.getPercentageOf("Bills")) + "%)");
-		subbills.setForeground(Color.WHITE);
+		subbills.setForeground(Color.BLACK);
 		
 		foodtext = new JTextField(10);
 		foodtext.setEditable(false);
 		subfood = new JLabel("Your food expense is $" + dec.format(exp[1].getValue()) + " of your gross income. (" + dec.format(m_client.getPercentageOf("Food")) + "%)");
-		subfood.setForeground(Color.WHITE);
+		subfood.setForeground(Color.BLACK);
 		
 		gastext = new JTextField(10);
 		gastext.setText("0000");
 		subgas = new JLabel("Your gas expense is $" + dec.format(exp[2].getValue()) + " of your gross income. (" + dec.format(m_client.getPercentageOf("Gas")) + "%)");
-		subgas.setForeground(Color.WHITE);
+		subgas.setForeground(Color.BLACK);
 		
 		enttext = new JTextField(10);
 		enttext.setText("0000");
 		subent = new JLabel("Your entertainment expense is $" + dec.format(exp[3].getValue()) + " of your gross income. (" + dec.format(m_client.getPercentageOf("Entertainment")) + "%)");
-		subent.setForeground(Color.WHITE);
+		subent.setForeground(Color.BLACK);
 		
 		subgoal = new JLabel("Your target goal savings was " + dec.format((m_client.getTargetSavings())*100) + "% of your total income.");
-		subgoal.setForeground(Color.WHITE);
+		subgoal.setForeground(Color.BLACK);
 		
 		subactualsav = new JLabel("You actually saved " + dec.format((100 - m_client.getActualSavingsPercentage())) + "% of your total income.");
-		subactualsav.setForeground(Color.WHITE);
+		subactualsav.setForeground(Color.BLACK);
 		
 		subclientpanel = new JPanel();
 		subclientpanel.setLayout(new GridLayout(12, 1));
@@ -136,12 +136,18 @@ public class ClientPanel extends JPanel implements ActionListener{
 		JPanel summarypane = new JPanel();
 		
 		nameformat.setLayout(new FlowLayout());
-		nameformat.setBackground(Color.GRAY);
+		nameformat.setBackground(Color.ORANGE);
 		subclientname.setFont(new Font("Cambria", Font.ITALIC | Font.BOLD, 20));
 		nameformat.add(subclientname);
+<<<<<<< HEAD
 		
 		summarypane.setLayout(new GridLayout(3, 1));
 		summarypane.setBackground(Color.GRAY);
+=======
+		
+		summarypane.setLayout(new GridLayout(2, 2));
+		summarypane.setBackground(Color.ORANGE);
+>>>>>>> FETCH_HEAD
 		summarypane.add(subgrossincome);
 		summarypane.add(subgoal);
 		summarypane.add(subactualsav);
@@ -160,7 +166,7 @@ public class ClientPanel extends JPanel implements ActionListener{
 		subclientpanel.add(buttonPanel[ENTERTAINMENT]);
 		subclientpanel.add(summarypane);
 		
-		subclientpanel.setBackground(Color.GRAY);
+		subclientpanel.setBackground(Color.ORANGE);
 		add(subclientpanel);	
 	}
 	
