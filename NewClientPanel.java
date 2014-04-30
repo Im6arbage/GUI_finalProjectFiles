@@ -2,10 +2,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -20,6 +20,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
+import java.util.*;
+import java.awt.*;
 
 public class NewClientPanel extends JPanel implements ActionListener{
 	
@@ -81,7 +83,12 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		purpline = BorderFactory.createLineBorder(Color.MAGENTA);
 		raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
 		
+		JPanel mainpanel1 = new JPanel();
+		mainpanel1.setLayout(new FlowLayout());
+		mainpanel1.setBackground(Color.ORANGE);
+		
 		JPanel p1 = new JPanel();
+		p1.setLayout(new GridLayout(3,0));
 		p1.setBorder(raisedetched);
 		p1.setBackground(Color.ORANGE);
 		
@@ -95,12 +102,12 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		p1a.setBackground(Color.ORANGE);
 		
 		JPanel p1b = new JPanel();
-		p1b.setLayout(new GridLayout(3,0));
+		p1b.setLayout(new GridLayout(2,1));
 		p1b.setBackground(Color.ORANGE);
 		
 		JPanel p1ba = new JPanel();
 		p1ba.setBackground(Color.ORANGE);
-		p1ba.setLayout(new GridLayout(1,0));
+		p1ba.setLayout(new GridLayout(1,3));
 		
 		p1b.add(whatpercent = new JLabel("What % of your income would you like to save?"));
 	       
@@ -121,15 +128,29 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		group.add(twentypercent);
 		p1ba.add(twentypercent);
 		
+		JPanel mainpanel1a = new JPanel();
+		mainpanel1a.setLayout(new BorderLayout());
+		mainpanel1a.setBackground(Color.ORANGE);
 		icon = new ImageIcon("/Users/codyherring/Desktop/GUI_finalProject/GUI_finalProjectFiles/money_icon.png");
 		
 		iconlabel = new JLabel(icon);
-	 
+		iconlabel.setBackground(Color.ORANGE);
+		//iconlabel.setOpaque(true);
+		
 		p1b.add(p1ba);
-		p1b.add(iconlabel);
+		p1b.add(mainpanel1a);
 	
 		p1.add(p1a);
 		p1.add(p1b);
+		p1.add(iconlabel);
+
+		
+		mainpanel1.add(p1);
+		
+		JPanel mainpanel2 = new JPanel();
+		mainpanel2.setLayout(new FlowLayout());
+		mainpanel2.setBackground(Color.ORANGE);
+		
 		
 		JPanel p2 = new JPanel();
 		p2.setLayout(new GridLayout(2,1));
@@ -197,12 +218,14 @@ public class NewClientPanel extends JPanel implements ActionListener{
 		p2.add(p2a);
 		p2.add(p2b);
 		
+		mainpanel2.add(p2);
 		
-		//JPanel panel = new JPanel();
 		/*panel.*/setLayout(new GridLayout(2,1));
+		mainpanel1.add(mainpanel1a);
 		
-		/*panel.*/add(p1, BorderLayout.NORTH);
-		/*panel.*/add(p2, BorderLayout.SOUTH);
+		/*panel.*/add(mainpanel1, BorderLayout.NORTH);
+		/*panel.*/add(mainpanel2, BorderLayout.SOUTH);
+		
 		
 		setBackground(Color.ORANGE);
 		
