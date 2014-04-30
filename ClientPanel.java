@@ -4,7 +4,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import java.text.DecimalFormat;
-import java.util.*;
 
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
@@ -264,5 +263,12 @@ public class ClientPanel extends JPanel implements ActionListener{
 		}
 		}
 		this.getTopLevelAncestor().repaint();
+	}
+	
+	
+	
+	public Client getAssociatedClient()
+	{
+		return m_client;
 	}
 }

@@ -77,14 +77,14 @@ public class ClientManager{
 	}
 	
 	
-	public void saveClient(int index)
+	public void saveClient(String name)
 	{
 		try 
 		{
-			getClientAt(index).save();
+			Client c = getClientByName(name);
+			c.save();
 		} 
 		catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println("Error Saving client!");
 		}
 	}

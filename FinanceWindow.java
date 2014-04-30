@@ -1,10 +1,11 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
 import java.util.*;
 
 
@@ -47,6 +48,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		m_newClient = new JMenuItem("New Client");
 		m_newClient.addActionListener(this);
 		m_export = new JMenuItem("Export");
+		m_export.addActionListener(this);
 		m_exit = new JMenuItem("Exit");
 		m_exit.addActionListener(this);
 		
@@ -105,6 +107,7 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	{
 		ClientPanel panel = new ClientPanel(cl);
 		m_tabbedPane.addTab(cl.getName(), panel);
+		m_clientmanager.addClient(cl);
 		m_currTab++;
 	}
 	
@@ -134,8 +137,6 @@ public class FinanceWindow extends JFrame implements ActionListener{
 	{
 		NewClientPanel newpanel = new NewClientPanel(new Client());
 		m_tabbedPane.addTab("New Client", newpanel);
-		
-		
 	}
 	
 	/************************************************
@@ -157,9 +158,13 @@ public class FinanceWindow extends JFrame implements ActionListener{
 		{
 			addNewClientTab();
 		}
-		else if (ev == m_export)
+		else if(ev == m_export)
 		{
-			m_clientmanager.saveClient(m_tabbedPane.getSelectedIndex());   
+			m_clientmanager.saveClient(((ClientPanel) m_tabbedPane.getSelectedComponent()).getAssociatedClient().getName());
+		}
+		else if(ev == m_about)
+		{
+			JOptionPane.showMessageDialog(null, "Cody Herring and Justin Brumley\n                CS 315-01\n              Spring 2014");
 		}
 	}
 }

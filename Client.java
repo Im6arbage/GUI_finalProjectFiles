@@ -1,6 +1,7 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -143,33 +144,21 @@ public class Client{
 		{
 			FileOutputStream oStream = new FileOutputStream(m_name + ".txt");
 			PrintWriter writer = new PrintWriter(oStream);
-			writer.println(m_name);
-			writer.println(m_monthlyIncome);
-			writer.println(m_targetSavings);
+			System.out.println(m_name);
+			writer.println("Customer Name: " + m_name);
+			writer.println("Monthly Income: " + m_monthlyIncome);
+			writer.println("Target Savings: " + m_targetSavings);
 			for(int i = 0; i < 4; ++i)
 			{
-				writer.println(m_expenses[i].getValue());
+				writer.println(m_expenses[i].getDescription() + " : " + m_expenses[i].getValue());
 			}
 			writer.close();
-			oStream.close();
 		}
-		catch(Exception e)
+		catch(FileNotFoundException e)
 		{
 			System.out.println("Error writing to the file!");
+			System.out.println(m_name);
+			e.getStackTrace();
 		}
 	}
-	
-	/*
-	public void loadClient(String filename)
-	{
-		try
-		{
-			FileInputStream iStream = new FileInputStream(filename);
-			Scanner reader = new Scanner(iStream);
-		}
-		catch(Exception e)
-		{
-			System.out.println("Error loading the client!");
-		}
-	}*/
 }
