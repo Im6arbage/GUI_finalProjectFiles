@@ -273,8 +273,8 @@ public class NewClientPanel extends JPanel implements ActionListener{
 				
 				Expense[] expenses = new Expense[4];
 				expenses[0] = new Expense("Bills", billsamt, 0);
-				expenses[1] = new Expense("Gas", gasamt, 1);
-				expenses[2] = new Expense("Food", foodamt, 2);
+				expenses[1] = new Expense("Food", foodamt, 1);
+				expenses[2] = new Expense("Gas", gasamt, 2);
 				expenses[3] = new Expense("Entertainment", entamt, 3);
 					
 				m_clientinfo.setExpenses(expenses);
