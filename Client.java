@@ -1,3 +1,13 @@
+//
+//  Client.java
+//
+//  CS 315, Dr. Jenkins
+//  Project 2
+//  	
+//  Created by Cody Herring, Justin Brumley on 4/30/14.
+//
+//
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

@@ -1,3 +1,12 @@
+//
+//  Expense.java
+//
+//  CS 315, Dr. Jenkins
+//  Project 2
+//  	
+//  Created by Cody Herring, Justin Brumley on 4/30/14.
+//
+//
 public class Expense{
 	private float m_value;
 	private int m_priority;

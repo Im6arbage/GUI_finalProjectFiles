@@ -1,3 +1,13 @@
+//
+//  ClientPanel.java
+//
+//  CS 315, Dr. Jenkins
+//  Project 2
+//  	
+//  Created by Cody Herring, Justin Brumley on 4/30/14.
+//
+//
+
 import java.awt.*;
 import java.awt.event.*;
 

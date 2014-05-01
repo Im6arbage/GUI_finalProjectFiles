@@ -1,3 +1,12 @@
+//
+//  NewClientPanel.java
+//
+//  CS 315, Dr. Jenkins
+//  Project 2
+//  	
+//  Created by Cody Herring, Justin Brumley on 4/30/14.
+//
+//
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -5,10 +14,8 @@ import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;

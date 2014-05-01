@@ -1,3 +1,12 @@
+//
+//  FinanceWindow.java
+//
+//  CS 315, Dr. Jenkins
+//  Project 2
+//  	
+//  Created by Cody Herring, Justin Brumley on 4/30/14.
+//
+//
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
